@@ -1,3 +1,0 @@
-step 1: yarn add mongoose graphql-yoga graphql-compose graphql-compose-mongoose dotenv
-step 2: yarn add babel-cli babel-preset-env --dev
-step 3: add scripts to package.json
