@@ -8,6 +8,14 @@ import Item from '../models/item';
 const customizationOptions = {}; // left it empty for simplicity, described below
 const ItemTC = composeWithMongoose(Item, customizationOptions);
 
+ItemTC.addResolver({
+  kind: 'query',
+  name: 'hello',
+  resolve: () => {console.log("hello babe");
+    return "hello babe";
+    },
+});
+
 schemaComposer.rootQuery().addFields({
   itemById: ItemTC.getResolver('findById'),
   itemByIds: ItemTC.getResolver('findByIds'),
@@ -16,6 +24,7 @@ schemaComposer.rootQuery().addFields({
   itemCount: ItemTC.getResolver('count'),
   itemConnection: ItemTC.getResolver('connection'),
   itemPagination: ItemTC.getResolver('pagination'),
+  itemHello: ItemTC.getResolver('hello'),
 });
 
 schemaComposer.rootMutation().addFields({

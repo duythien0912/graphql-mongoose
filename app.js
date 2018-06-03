@@ -16,6 +16,6 @@ const options = {
 
 server.start(options, ({ port }) =>
   console.log(
-    `Server started, listening on port ${port} for incoming requests.`,
+    `🚀 🚀 🚀 Server ready at ${port} 🚀 🚀 🚀`,
   ),
 );
